@@ -40,4 +40,44 @@ public class JobTest {
         // Test that equals returns false.
         assertFalse(job1.equals(job2));
     }
+    // Define a test called testToStringStartsAndEndsWithNewLine.
+    @Test
+    public void testToStringStartsAndEndsWithNewLine() {
+        // Create a Job object with some data (for testing the toString method).
+        Job job = new Job("Product tester", new Employer("ACME"), new Location("Desert"),
+                new PositionType("Quality control"), new CoreCompetency("Persistence"));
+
+        // Define the expected output with the specified formatting and universal line separator.
+        String expected = System.lineSeparator() +
+                "ID: " + job.getId() + System.lineSeparator() +
+                "Name: Product tester" + System.lineSeparator() +
+                "Employer: ACME" + System.lineSeparator() +
+                "Location: Desert" + System.lineSeparator() +
+                "Position Type: Quality control" + System.lineSeparator() +
+                "Core Competency: Persistence" + System.lineSeparator() +
+                System.lineSeparator(); // Ending new line
+
+        // Use assertEquals to verify that the toString method produces the expected output.
+        assertEquals(expected, job.toString());
+    }
+    // Define a test called testToStringContainsCorrectLabelsAndData.
+    @Test
+    public void testToStringContainsCorrectLabelsAndData() {
+        // Create a Job object with specific data (for testing the toString method).
+        Job job = new Job("Product tester", new Employer("ACME"), new Location("Desert"),
+                new PositionType("Quality control"), new CoreCompetency("Persistence"));
+
+        // Define the expected output with the specified formatting and universal line separator.
+        String expected = System.lineSeparator() +
+                "ID: " + job.getId() + System.lineSeparator() +
+                "Name: Product tester" + System.lineSeparator() +
+                "Employer: ACME" + System.lineSeparator() +
+                "Location: Desert" + System.lineSeparator() +
+                "Position Type: Quality control" + System.lineSeparator() +
+                "Core Competency: Persistence" + System.lineSeparator() +
+                System.lineSeparator(); // Ending new line
+
+        // Use assertTrue to verify that the toString output contains the expected labels and data.
+        assertTrue(job.toString().contains(expected));
+    }
 }

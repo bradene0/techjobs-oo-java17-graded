@@ -56,6 +56,19 @@ public class Job {
         return Objects.hash(getId());
     }
 
+
+    // Custom toString method to pass the first test.
+    @Override
+    public String toString() {
+        return "\n" +
+                "ID: " + id + "\n" +
+                "Name: " + name + "\n" +
+                "Employer: " + employer + "\n" +
+                "Location: " + location + "\n" +
+                "Position Type: " + positionType + "\n" +
+                "Core Competency: " + coreCompetency + "\n\n";
+    }
+
     // Getters and Setters (generated):
 
     public int getId() {
