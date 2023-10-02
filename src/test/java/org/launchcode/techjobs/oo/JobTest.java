@@ -1,5 +1,43 @@
 package org.launchcode.techjobs.oo;
 
+import org.junit.Test;
+import static org.junit.Assert.*;
 public class JobTest {
-    //TODO: Create your unit tests here
+    // Define a test called testSettingJobId and annotate it with @Test.
+    @Test
+    public void testSettingJobId() {
+        // Create two Job objects using the empty constructor.
+        Job job1 = new Job();
+        Job job2 = new Job();
+
+        // Use assertNotEquals to verify that the IDs of the two objects are distinct.
+        assertNotEquals(job1.getId(), job2.getId()); // Ensure IDs are distinct.
+    }
+    // Define a test called testJobConstructorSetsAllFields.
+    @Test
+    public void testJobConstructorSetsAllFields() {
+        // Declare and initialize a new Job object with the specified data.
+        Job job = new Job("Product tester", new Employer("ACME"), new Location("Desert"),
+                new PositionType("Quality control"), new CoreCompetency("Persistence"));
+
+        // Use assertTrue and assertEquals statements to verify field values.
+        assertTrue(job instanceof Job);
+        assertEquals("Product tester", job.getName());
+        assertEquals("ACME", job.getEmployer().getValue());
+        assertEquals("Desert", job.getLocation().getValue());
+        assertEquals("Quality control", job.getPositionType().getValue());
+        assertEquals("Persistence", job.getCoreCompetency().getValue());
+    }
+    // Define a test called testJobsForEquality.
+    @Test
+    public void testJobsForEquality() {
+        // Generate two Job objects with identical field values except for id.
+        Job job1 = new Job("Product tester", new Employer("ACME"), new Location("Desert"),
+                new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        Job job2 = new Job("Product tester", new Employer("ACME"), new Location("Desert"),
+                new PositionType("Quality control"), new CoreCompetency("Persistence"));
+
+        // Test that equals returns false.
+        assertFalse(job1.equals(job2));
+    }
 }
