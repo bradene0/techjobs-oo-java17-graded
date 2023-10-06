@@ -74,8 +74,8 @@ public class JobTest {
                 "Employer: ACME" + System.lineSeparator() +
                 "Location: Desert" + System.lineSeparator() +
                 "Position Type: Quality control" + System.lineSeparator() +
-                "Core Competency: Persistence" + System.lineSeparator() +
-                System.lineSeparator(); // Ending new line
+                "Core Competency: Persistence" + System.lineSeparator();
+                //System.lineSeparator(); // Ending new line
 
         // Use assertTrue to verify that the toString output contains the expected labels and data.
         assertTrue(job.toString().contains(expected));

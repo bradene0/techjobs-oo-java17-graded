@@ -20,7 +20,14 @@ public abstract class JobField {
 
     @Override
     public String toString() {
-        return value;
+
+        // Check if the value is null or empty and replace it with "Data not available"
+        if (value == null || value.isEmpty()) {
+            return "Data not available";
+        } else {
+            return value;
+        }
+
     }
 
     @Override
