@@ -48,14 +48,14 @@ public class JobTest {
                 new PositionType("Quality control"), new CoreCompetency("Persistence"));
 
         // Define the expected output with the specified formatting and universal line separator.
-        String expected = System.lineSeparator() +
+        String expected = /*System.lineSeparator() +*/
                 "ID: " + job.getId() + System.lineSeparator() +
-                "Name: Product tester" + System.lineSeparator() +
-                "Employer: ACME" + System.lineSeparator() +
-                "Location: Desert" + System.lineSeparator() +
-                "Position Type: Quality control" + System.lineSeparator() +
-                "Core Competency: Persistence" + System.lineSeparator() +
-                System.lineSeparator(); // Ending new line
+                        "Name: Product tester" + System.lineSeparator() +
+                        "Employer: ACME" + System.lineSeparator() +
+                        "Location: Desert" + System.lineSeparator() +
+                        "Position Type: Quality control" + System.lineSeparator() +
+                        "Core Competency: Persistence" + System.lineSeparator() +
+                        System.lineSeparator(); // Ending new line
 
         // Use assertEquals to verify that the toString method produces the expected output.
         assertEquals(expected, job.toString());
@@ -68,16 +68,19 @@ public class JobTest {
                 new PositionType("Quality control"), new CoreCompetency("Persistence"));
 
         // Define the expected output with the specified formatting and universal line separator.
-        String expected = System.lineSeparator() +
-                "ID: " + job.getId() + System.lineSeparator() +
+        String expected = "ID: " + job.getId() + System.lineSeparator() +
                 "Name: Product tester" + System.lineSeparator() +
                 "Employer: ACME" + System.lineSeparator() +
                 "Location: Desert" + System.lineSeparator() +
                 "Position Type: Quality control" + System.lineSeparator() +
-                "Core Competency: Persistence" + System.lineSeparator();
-                //System.lineSeparator(); // Ending new line
+                "Core Competency: Persistence" + System.lineSeparator() +
+                System.lineSeparator(); // Ending new line
 
-        // Use assertTrue to verify that the toString output contains the expected labels and data.
-        assertTrue(job.toString().contains(expected));
+        System.out.println("Expected: " + expected);
+        System.out.println("Actual: " + job.toString());
+
+        // Use assertEquals to verify that the toString output matches the expected format.
+        assertEquals(expected, job.toString());
     }
+
 }
