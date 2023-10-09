@@ -48,7 +48,7 @@ public class JobTest {
                 new PositionType("Quality control"), new CoreCompetency("Persistence"));
 
         // Define the expected output with the specified formatting and universal line separator.
-        String expected = /*System.lineSeparator() +*/
+        String expected = //System.lineSeparator() +
                 "ID: " + job.getId() + System.lineSeparator() +
                         "Name: Product tester" + System.lineSeparator() +
                         "Employer: ACME" + System.lineSeparator() +
@@ -75,6 +75,7 @@ public class JobTest {
                 "Position Type: Quality control" + System.lineSeparator() +
                 "Core Competency: Persistence" + System.lineSeparator() +
                 System.lineSeparator(); // Ending new line
+
 
         System.out.println("Expected: " + expected);
         System.out.println("Actual: " + job.toString());
