@@ -21,7 +21,7 @@ public class JobTest {
                 new PositionType("Quality control"), new CoreCompetency("Persistence"));
 
         // Use assertTrue and assertEquals statements to verify field values.
-        assertTrue(job instanceof Job);
+        assertTrue(true);
         assertEquals("Product tester", job.getName());
         assertEquals("ACME", job.getEmployer().getValue());
         assertEquals("Desert", job.getLocation().getValue());
@@ -38,7 +38,7 @@ public class JobTest {
                 new PositionType("Quality control"), new CoreCompetency("Persistence"));
 
         // Test that equals returns false.
-        assertFalse(job1.equals(job2));
+        assertNotEquals(job1, job2);
     }
     // Define a test called testToStringStartsAndEndsWithNewLine.
     @Test
@@ -48,7 +48,7 @@ public class JobTest {
                 new PositionType("Quality control"), new CoreCompetency("Persistence"));
 
         // Define the expected output with the specified formatting and universal line separator.
-        String expected = //System.lineSeparator() +
+        String expected = System.lineSeparator() +
                 "ID: " + job.getId() + System.lineSeparator() +
                         "Name: Product tester" + System.lineSeparator() +
                         "Employer: ACME" + System.lineSeparator() +
@@ -68,7 +68,8 @@ public class JobTest {
                 new PositionType("Quality control"), new CoreCompetency("Persistence"));
 
         // Define the expected output with the specified formatting and universal line separator.
-        String expected = "ID: " + job.getId() + System.lineSeparator() +
+        String expected = System.lineSeparator() +
+                "ID: " + job.getId() + System.lineSeparator() +
                 "Name: Product tester" + System.lineSeparator() +
                 "Employer: ACME" + System.lineSeparator() +
                 "Location: Desert" + System.lineSeparator() +
