@@ -55,7 +55,7 @@ public class JobTest {
                         "Location: Desert" + System.lineSeparator() +
                         "Position Type: Quality control" + System.lineSeparator() +
                         "Core Competency: Persistence" + System.lineSeparator() +
-                        System.lineSeparator(); // Ending new line
+                "\r\n"; // Ending new line
 
         // Use assertEquals to verify that the toString method produces the expected output.
         assertEquals(expected, job.toString());
@@ -66,6 +66,9 @@ public class JobTest {
         // Create a Job object with specific data (for testing the toString method).
         Job job = new Job("Product tester", new Employer("ACME"), new Location("Desert"),
                 new PositionType("Quality control"), new CoreCompetency("Persistence"));
+
+
+
 
         // Define the expected output with the specified formatting and universal line separator.
         String expected = System.lineSeparator() +
