@@ -81,6 +81,7 @@ public class JobTest {
                 System.lineSeparator(); // Ending new line
 
 
+
         System.out.println("Expected: " + expected);
         System.out.println("Actual: " + job.toString());
 
